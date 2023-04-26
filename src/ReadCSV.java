@@ -52,9 +52,10 @@ class ReadCSV {
         }
         match.close();
 
-        
+
 
         Scenario1.print();
+        Scenario2.print();
 
 
     }
