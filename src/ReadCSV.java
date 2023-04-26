@@ -56,6 +56,7 @@ class ReadCSV {
 
         Scenario1.print();
         Scenario2.print();
+        Scenario3.print();
 
 
     }
