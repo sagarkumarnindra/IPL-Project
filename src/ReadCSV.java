@@ -60,11 +60,11 @@ class ReadCSV {
         while(true) // infinite loop for user interaction
         {
             System.out.println("\n" +
-                    "* Enter 1 to view number of matches played per year of all the years in IPL\n" +
+                    "* Enter 1 to view number of matches played per year of all the years in IPL.\n" +
                     "* Enter 2 to view number of matches won of all teams over all the years of IPL.\n" +
-                    "* Enter 3 to view the extra runs conceded per team for the year 2016\n" +
-                    "* Enter 4 to view the top economical bowler for the year 2015\n" +
-                    "* Enter 5 to \n" +
+                    "* Enter 3 to view the extra runs conceded per team for the year 2016.\n" +
+                    "* Enter 4 to view the top economical bowler for the year 2015.\n" +
+                    "* Enter 5 to view all the players who won man of the match and number of times they won award in IPL.\n" +
                     "* Enter 6 to EXIT\n");
             int i = sc.nextInt();
             switch(i)
@@ -78,7 +78,7 @@ class ReadCSV {
                 case 4:
                     Scenario4.print(); break;
                 case 5:
-                    break;
+                    Scenario5.print(); break;
                 case 6:
                     System.exit(01);
                 default:

@@ -1,5 +1,6 @@
 import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -44,14 +45,13 @@ public class Scenario4 {
 
         Map<Double, String> map2 = new TreeMap<>(); // Map to store economy rate and name of bowler
 
-        double min = Double.MAX_VALUE;
         for(String s: map1.keySet())
         {
             double avg = (map1.get(s).get(1)) / ((map1.get(s).get(0))/6.0);
-            if(avg<min) min = avg;
-        map2.put(avg,s);
+            map2.put(avg,s);
         }
-        
+        double min = Collections.min(map2.keySet());
+
         System.out.println("Top Economical Bowler for the year 2015 is : "+map2.get(min));
     }
 }
