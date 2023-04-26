@@ -3,15 +3,21 @@ import java.util.*;
 
 class ReadCSV {
 
+    static ArrayList<Deliveries> deliveriesrecord = new ArrayList<Deliveries>(); // Array list of deliveries object
+
+    static ArrayList<Matches> matchesrecord = new ArrayList<Matches>(); // Array list of matches object
+
     public static void main(String args[]) throws Exception
     {
+
+        ReadCSV obj = new ReadCSV();
 
         // Read & Store deliveries data
 
         BufferedReader delivery = new BufferedReader(new FileReader("deliveries.csv"));
 
         Deliveries d; // deliveries object
-        ArrayList<Deliveries> deliveriesrecord = new ArrayList<Deliveries>(); // Array list of deliveries object
+
         String line = "";
 
         while((line = delivery.readLine()) != null) //loop to extract deliveries csv files line & split store the fields value in an object.
@@ -22,7 +28,7 @@ class ReadCSV {
            fields[7],fields[8],fields[9],fields[10],fields[11],fields[12],fields[13],fields[14],
            fields[15],fields[16],fields[17],fields[18],fields[19],fields[20]); // creating objects and sending values to constructor
 
-            deliveriesrecord.add(d); // adding objects in array list
+            obj.deliveriesrecord.add(d); // adding objects in array list
        }
         delivery.close();
 
@@ -31,7 +37,7 @@ class ReadCSV {
         BufferedReader match = new BufferedReader(new FileReader("matches.csv"));
 
         Matches m; // matches object
-        ArrayList<Matches> matchesesrecord = new ArrayList<Matches>(); // Array list of matches object
+
         String line1 = "";
 
         while((line1 = match.readLine()) != null) //loop to extract matches csv files line & split store the fields value in an object.
@@ -42,11 +48,13 @@ class ReadCSV {
                     fields1[7],fields1[8],fields1[9],fields1[10],fields1[11],fields1[12],fields1[13],fields1[14],
                     fields1[15],fields1[16],fields1[17]); // creating objects and sending values to constructor
 
-            matchesesrecord.add(m); // adding objects in array list
+            obj.matchesrecord.add(m); // adding objects in array list
         }
         match.close();
 
+        
 
+        Scenario1.print();
 
 
     }
