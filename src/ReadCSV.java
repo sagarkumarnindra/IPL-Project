@@ -5,13 +5,16 @@ class ReadCSV {
 
     public static void main(String args[]) throws Exception
     {
-        BufferedReader br = new BufferedReader(new FileReader("deliveries.csv"));
+
+        // Read & Store deliveries data
+
+        BufferedReader delivery = new BufferedReader(new FileReader("deliveries.csv"));
 
         Deliveries d; // deliveries object
         ArrayList<Deliveries> deliveriesrecord = new ArrayList<Deliveries>(); // Array list of deliveries object
         String line = "";
 
-        while((line = br.readLine()) != null) //loop to extract deliveries csv files line & split store the fields value in an object.
+        while((line = delivery.readLine()) != null) //loop to extract deliveries csv files line & split store the fields value in an object.
        {
             String[] fields = line.split(",", -1); // split the extracted string, -1 to store the empty values
 
@@ -21,6 +24,27 @@ class ReadCSV {
 
             deliveriesrecord.add(d); // adding objects in array list
        }
+        delivery.close();
+
+        // Read & Store Matches data
+
+        BufferedReader match = new BufferedReader(new FileReader("matches.csv"));
+
+        Matches m; // matches object
+        ArrayList<Matches> matchesesrecord = new ArrayList<Matches>(); // Array list of matches object
+        String line1 = "";
+
+        while((line1 = match.readLine()) != null) //loop to extract matches csv files line & split store the fields value in an object.
+        {
+            String[] fields1 = line1.split(",", -1); // split the extracted string, -1 to store the empty values
+
+            m =  new Matches(fields1[0],fields1[1],fields1[2],fields1[3],fields1[4],fields1[5],fields1[6],
+                    fields1[7],fields1[8],fields1[9],fields1[10],fields1[11],fields1[12],fields1[13],fields1[14],
+                    fields1[15],fields1[16],fields1[17]); // creating objects and sending values to constructor
+
+            matchesesrecord.add(m); // adding objects in array list
+        }
+        match.close();
 
 
 
